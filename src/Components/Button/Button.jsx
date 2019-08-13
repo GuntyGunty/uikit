@@ -5,12 +5,12 @@ class Button extends Component {
  
   onClick = (e) => {
     this.props.onClick();
-    console.log(e.target);
   }
 
   render() {
     let className = 'Button ';
     switch(this.props.theme) {
+      case 'accent' :
       case 'secondary':
         className += this.props.theme
         break;
@@ -19,11 +19,11 @@ class Button extends Component {
     }
       
     switch(this.props.state) {
-      case 'enabled': 
       case 'processing':
       case 'disabled':
         className +=  ' ' + this.props.state
         break;
+      default: className += 'enabled'
     }
 
     return (
