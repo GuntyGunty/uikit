@@ -20,7 +20,7 @@ export default class Input extends React.Component {
   render() {
     return (
       <label>
-        <input type="text" className="Input" onChange={this.onChange} value={this.state.value} />
+        <input type='text' className={`Input ` + this.props.className} onChange={this.onChange} value={this.state.value} placeholder={this.props.placeholder} />
       </label>
     ); 
   }
