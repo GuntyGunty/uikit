@@ -23,7 +23,7 @@ export default class Input extends React.Component {
     switch(this.props.theme) { 
       case 'secondary':
       case 'error':
-        className += ' ' + 
+        className += ' ' + this.props.theme
       breack
       default: 'primary'
     }
