@@ -12,7 +12,7 @@ class Button extends Component {
     switch(this.props.theme) {
       case 'accent' :
       case 'secondary':
-        className += this.props.theme
+        className += ' ' +  this.props.theme
         break;
       default:
         className += 'primary'
