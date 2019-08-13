@@ -26,6 +26,12 @@ class Button extends Component {
       default: className += 'enabled'
     }
 
+    getClassName = (element, classesArray) => {
+      switch(element) {
+
+      }
+    }
+
     return (
       <button onClick={this.onClick} className={className} >
         {this.props.children}
