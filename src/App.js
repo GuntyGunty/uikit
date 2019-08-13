@@ -9,7 +9,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Input> placeholder='type somth'</Input>
+        <Input placeholder='type somth'> 
+          <span>Some description here</span>
+        </Input>
       </div>
     );
   }

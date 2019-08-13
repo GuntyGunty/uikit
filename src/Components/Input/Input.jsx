@@ -28,9 +28,13 @@ export default class Input extends React.Component {
       default: 'primary'
     }
 
+    // variants border no-border
+    // state error focused verified
+
     return (
       <label>
-        <input type='text' className={className} onChange={this.onChange} value={this.state.value} placeholder={this.props.placeholder} />
+        {this.props.children}
+        <input type='text' className={className} onChange={this.onChange} value={this.state.value} placeholder={this.props.placeholder}/>
       </label>
     ); 
   }
