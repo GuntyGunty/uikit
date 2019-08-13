@@ -18,9 +18,19 @@ export default class Input extends React.Component {
   }
 
   render() {
+    let className = 'Input'
+
+    switch(this.props.theme) { 
+      case 'secondary':
+      case 'error':
+        className += ' ' + 
+      breack
+      default: 'primary'
+    }
+
     return (
       <label>
-        <input type='text' className={`Input ` + this.props.className} onChange={this.onChange} value={this.state.value} placeholder={this.props.placeholder} />
+        <input type='text' className={className} onChange={this.onChange} value={this.state.value} placeholder={this.props.placeholder} />
       </label>
     ); 
   }
