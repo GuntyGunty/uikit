@@ -27,36 +27,19 @@ class Button extends Component {
       outlined: 'outlined'
     }
 
-    // getClassName = (obj, props, className) => {
-    //   for(let key in obj) {
-    //     if(key === props) {
-    //       className += + ' ' + key;
-    //     }
-    //   }
-    //   return className
-    // }
+    let getClassName = (obj, props, className) => {
+      for(let key in obj) {
+        if(key === props) {
+          className +=  ' ' + obj[key];
+        }
+      }
 
-    // getClassName(theme, this.props.theme, className);
+      return className
+    }
 
-    console.log(className);
-
-    // switch(this.props.theme) {
-    //   case 'accent' :
-    //   case 'secondary':
-    //     className += ' ' +  this.props.theme
-    //     break;
-    //   default:
-    //     className += 'primary'
-    // }
-      
-    // switch(this.props.state) {
-    //   case 'processing':
-    //   case 'disabled':
-    //     className +=  ' ' + this.props.state
-    //     break;
-    //   default: className += 'enabled'
-    // }
-
+    className = getClassName(theme, this.props.theme, className);
+    className =  getClassName(state, this.props.state, className);
+    className = getClassName(variants, this.props.variants, className);
 
     return (
       <button onClick={this.onClick} className={className} >
