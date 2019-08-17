@@ -5,7 +5,19 @@ export default class Link extends React.Component {
 
 //нужен ли ссылке state is clicked?
 
-  
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isClicked: false,
+    };
+  }
+
+  onClick = (e) => {
+    this.setState({
+      isClicked: !this.state.isOpened,
+    });
+  }
 
   render() {
     let className = 'Link';
