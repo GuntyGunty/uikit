@@ -16,7 +16,7 @@ export default class Input extends React.Component {
     let value = e.target.value;
     this.setState({
       value,
-      
+      //вот тут будет функция колбэк которая прооверяет на валидность и меняет состояние value
     })
   }
 
