@@ -3,8 +3,11 @@ import './Link.css';
 
 export default class Link extends React.Component {
 
-  render() {
+//нужен ли ссылке state is clicked?
 
+  
+
+  render() {
     let className = 'Link';
 
     let theme = {
@@ -23,18 +26,14 @@ export default class Link extends React.Component {
           className += ' ' + obj[key];
         }
       }
-
-      console.log(className);
       return className;
     }
 
-    console.log(className);
-
-    getClassName(theme, this.props.theme, className);
-    getClassName(theme, this.props.variants, className);
+    className = getClassName(theme, this.props.theme, className);
+    className = getClassName(variants, this.props.variants, className);
 
     return (
-      <div className={className}>
+      <div className={className} onClick={this.onClick}>
         <a href={this.props.href}>
           {this.props.children}
         </a>
