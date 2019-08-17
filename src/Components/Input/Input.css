@@ -1,0 +1,12 @@
+.Input span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.Input-field {
+  padding: 5px 15px;
+}
+
+.Input-field.bordered {
+  border: 1px solid #000;
+}
