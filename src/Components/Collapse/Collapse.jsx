@@ -25,15 +25,6 @@ export default class Collapse extends React.Component {
         }
       }
     );
-
-    // console.log(this.state.isOpened)
-
-    // if(this.state.isOpened) {
-    //   children: null
-    //  } else {
-    //   children: this.props.children
-    //  }
-
   }
 
   render() {
