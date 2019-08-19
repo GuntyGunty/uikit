@@ -5,6 +5,8 @@
 
 .Input-field {
   padding: 5px 15px;
+  border: 1px solid #000;
+  margin-right: 10px;
 }
 
 .Input-field.bordered {
