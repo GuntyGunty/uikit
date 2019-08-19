@@ -7,22 +7,32 @@ export default class Collapse extends React.Component {
 
     this.state = {
       isOpened: false,
-      children: this.props.children,
+      children: null,
     }
   }
 
   onClick = (e) => {
-    this.setState({
-      isOpened: !this.state.isOpened
-    });
+    this.setState({isOpened: !this.state.isOpened}, function() {
+      console.log(this.state.isOpened)
+        if(this.state.isOpened) {
+          this.setState({
+            children: this.props.children
+          })
+        } else {
+          this.setState({
+            children: null
+          })
+        }
+      }
+    );
 
-    console.log(this.state.isOpened)
+    // console.log(this.state.isOpened)
 
-    if(this.state.isOpened) {
-      children: null
-     } else {
-      children: this.props.children
-     }
+    // if(this.state.isOpened) {
+    //   children: null
+    //  } else {
+    //   children: this.props.children
+    //  }
 
   }
 
@@ -30,9 +40,9 @@ export default class Collapse extends React.Component {
     const { isOpened } = this.state;
 
     return (
-      <div className='Collapse'>
-        <span className='Collapse_toggler' onClick={this.onClick}>Show more</span>
-        <div className='Collapse_container'>
+      <div className="Collapse">
+        <span className="Collapse-toggler" onClick={this.onClick}>Show more</span>
+        <div className="Collapse-container">
           {this.state.children}
         </div>
       </div>
