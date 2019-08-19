@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import Collapse from './Components/Collapse/Collapse'
-=======
 
 import Input from './Components/Input/Input';
 import Checkbox from './Components/Checkbox/Checkbox';
@@ -10,7 +8,6 @@ import Form from './Components/Form/Form'
 import { InputMasks } from './Components/Input//InputMasks'
 
 import Link from './Components/Link/Link'
->>>>>>> 799c06b8822089ad1742ad9491ee40a6cc091592
 import logo from './logo.svg';
 import './App.css';
 import Button from './Components/Button/Button'
