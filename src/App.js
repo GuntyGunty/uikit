@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Input from './Components/Input/Input';
+import Checkbox from './Components/Checkbox/Checkbox';
 import Form from './Components/Form/Form'
 
 import { InputMasks } from './Components/Input//InputMasks'
@@ -73,6 +74,8 @@ class App extends Component {
         isValid: true,
       },
     });
+
+    console.log(name.isValild);
   }
 
 
@@ -103,9 +106,14 @@ class App extends Component {
             placeholder="email@mail.ru"
             variant={'bordered'}> 
           </Input>
+          <Checkbox 
+              isChecked={checkbox.value}
+              onChange={(isChecked) => this.handleInputChange('checkbox',isChecked)}
+            />
+            <Input type="submit" />
         </Form>
-        <Button onClick={() => console.log('hi')} theme={'primary'} state={'enabled'}><span>click</span></Button>
-        <Link href='https://github.com/GuntyGunty' theme='onlight' variants='single'>
+        <Button onClick={() => console.log("hi")} theme="primary" state={"enabled"}><span>click</span></Button>
+        <Link href='https://github.com/GuntyGunty' theme="primary" variant="single">
           <span>This is link</span>
         </Link>
       </div>

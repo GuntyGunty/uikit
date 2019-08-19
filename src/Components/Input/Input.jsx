@@ -39,7 +39,6 @@ class Input extends React.Component {
   }
 
   render() {
-
     const {
       name, 
       isValid,
@@ -55,7 +54,7 @@ class Input extends React.Component {
       THEMES.get(theme),
     );
 
-    console.log(this.props.isValid);
+    // console.log(this.props.isValid);
 
     return (
       <label className="Input">
