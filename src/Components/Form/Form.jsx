@@ -1,17 +1,20 @@
 import React from 'react';
 import './Form.css'
 
-export default class Form extends React.Component {
-  onSubmit = (e) => {
+const Form = ({
+  onSubmit,
+  children,
+}) => {
+  const onFormSubmit = (e) => {
     e.preventDafault();
-    typeof this.props.onSubmit === 'function' && this.props.onSubmit(e.target);
+    typeof onSubmit === 'function' && onSubmit(e.target);
   }
-  
-  render() {
-    return (
-      <form className="Form" onSubmit={this.onSubmit}>
-        {this.props.children}
-      </form>
-    )
-  }
-}
+
+  return (
+    <form className="Form" onSubmit={onFormSubmit}>
+      {children}
+    </form>
+  )
+};
+
+export default Form;

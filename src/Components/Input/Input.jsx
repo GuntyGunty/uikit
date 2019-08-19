@@ -40,17 +40,14 @@ class Input extends React.Component {
 
   render() {
     const {
-      name, 
       isValid,
       type,
       theme,
-      variant,
-      onBlur,
     } = this.props;
 
     const className = buildClassName(
       'Input-field',
-      this.props.isValid ? '' : 'invalid',
+      isValid ? '' : 'invalid',
       THEMES.get(theme),
     );
 
@@ -63,7 +60,7 @@ class Input extends React.Component {
                className={className} 
                onChange={this.onChange} 
                value={this.state.value} 
-               theme={this.state.theme}
+               theme={theme}
                placeholder={this.props.placeholder}/>
       </label>
     ); 
