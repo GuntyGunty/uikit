@@ -2,7 +2,7 @@ import React from 'react';
 import './Input.css'
 import { buildClassName } from '../../Utils/buildClassName';
 import { InputMasks } from './InputMasks'
-// import { THEMES } from '../../Consts/Themes';
+import { THEMES } from '../../Consts/Themes';
 
 const TYPES = new Map([
   ['text', {}], 
@@ -17,10 +17,6 @@ const TYPES = new Map([
     placeholder: 'email@mail.ru'
   }],
 ]); 
-
-const THEMES = new Map([
-  ['primary', 'primary']
-]);
 
 class Input extends React.Component {
   constructor(props) {
@@ -68,6 +64,7 @@ class Input extends React.Component {
                className={className} 
                onChange={this.onChange} 
                value={this.state.value} 
+               theme={this.state.theme}
                placeholder={this.props.placeholder}/>
       </label>
     ); 
