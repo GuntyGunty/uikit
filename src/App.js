@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 
 import Input from './Components/Input/Input';
 import Form from './Components/Form/Form'
 
 import { InputMasks } from './Components/Input//InputMasks'
 
+=======
+import Input from './Components/Input/Input'
+import Link from './Components/Link/Link'
+>>>>>>> 33fe4cee9256134a869cd5605390a7609677b4ba
 import logo from './logo.svg';
 import './App.css';
+import Button from './Components/Button/Button'
 
 class App extends Component {
   constructor(props) {
@@ -70,6 +76,7 @@ class App extends Component {
     const { phone, email, checkbox } = this.state;
 
     return (
+
       <div>
         <Input 
           type="phone"
@@ -81,6 +88,7 @@ class App extends Component {
           variant={'bordered'}> 
           <span>Some description here</span>
         </Input>
+<<<<<<< HEAD
         <Input
           type="email"
           name="email"
@@ -89,6 +97,12 @@ class App extends Component {
           placeholder="email@mail.ru"
           variant={'bordered'}> 
         </Input>
+=======
+        <Button onClick={() => console.log('hi')} theme={'primary'} state={'enabled'}><h1>click</h1></Button>
+        <Link href='https://github.com/GuntyGunty' theme='onlight' variants='single'>
+          <span>This is link</span>
+        </Link>
+>>>>>>> 33fe4cee9256134a869cd5605390a7609677b4ba
       </div>
     );
   }
