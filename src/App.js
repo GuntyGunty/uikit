@@ -10,6 +10,10 @@ import logo from './logo.svg';
 import './App.css';
 import Button from './Components/Button/Button'
 
+
+const emailMask = /^(\w)*@(\w)+.\w{2,}$/g;
+const phoneMask = /^\+?\d{0,11}$/g;
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -31,12 +35,15 @@ class App extends Component {
 
   handleLogin = (target) => {
     const formData = new FormData(target);
+
     const email = formData.get('email');
-    const emailMask = InputMasks.get('EMAIL')
+    // const emailMask = InputMasks.get('EMAIL')
     const isEmailValid = emailMask.test(email);
     const phone = formData.get('phone');
-    const phoneMask = InputMasks.get('PHONE');
+    // const phoneMask = InputMasks.get('PHONE');
     const isPhoneValid = phoneMask.test(phoneMask);
+
+    console.log(isEmailValid);
 
     if(isEmailValid) {
       this.setState({
@@ -68,18 +75,21 @@ class App extends Component {
     });
   }
 
+
   render() {
     const { phone, email, checkbox } = this.state;
+
+    console.log(phone.isValild);
 
     return (
 
       <div>
-        <Form>
+        <Form onSubmit={this.handleLogin}>
           <Input 
             type="phone"
             name="phone"
             placeholder="+7 999 999 99 99"
-            isValid={email.isValild}
+            isValid={phone.isValild}
             onChange={(value) => this.handleInputChange('phone', value)}
             onBlur={() => console.log(this.state)}
             variant={'bordered'}> 

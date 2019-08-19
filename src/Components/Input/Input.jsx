@@ -2,7 +2,7 @@ import React from 'react';
 import './Input.css'
 import { buildClassName } from '../../Utils/buildClassName';
 import { InputMasks } from './InputMasks'
-import { THEMES } from '../../Consts/Themes';
+// import { THEMES } from '../../Consts/Themes';
 
 const TYPES = new Map([
   ['text', {}], 
@@ -18,6 +18,10 @@ const TYPES = new Map([
   }],
 ]); 
 
+const THEMES = new Map([
+  ['primary', 'primary']
+]);
+
 class Input extends React.Component {
   constructor(props) {
     super(props);
@@ -32,8 +36,6 @@ class Input extends React.Component {
 
     const inputType = TYPES.get(type);
 
-    console.log(value);
-
     if(value.match(inputType.validator)) {
       this.setState({ value });
       typeof this.props.onChange === 'function' && this.props.onChange;
@@ -41,6 +43,7 @@ class Input extends React.Component {
   }
 
   render() {
+
     const {
       name, 
       isValid,
@@ -52,9 +55,11 @@ class Input extends React.Component {
 
     const className = buildClassName(
       'Input-field',
-      isValid ? '' : 'invalid',
+      this.props.isValid ? '' : 'invalid',
       THEMES.get(theme),
     );
+
+    console.log(this.props.isValid);
 
     return (
       <label className="Input">
