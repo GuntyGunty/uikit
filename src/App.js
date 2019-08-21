@@ -71,9 +71,7 @@ class App extends Component {
         value,
         isValid: true,
       },
-    });
-
-    
+    });    
   }
 
 

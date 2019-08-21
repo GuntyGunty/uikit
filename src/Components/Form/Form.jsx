@@ -6,7 +6,7 @@ const Form = ({
   children,
 }) => {
   const onFormSubmit = (e) => {
-    e.preventDafault();
+    e.preventDefault();
     typeof onSubmit === 'function' && onSubmit(e.target);
   }
 

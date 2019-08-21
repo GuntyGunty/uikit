@@ -34,7 +34,7 @@ class Input extends React.Component {
 
     if(value.match(inputType.validator)) {
       this.setState({ value });
-      typeof this.props.onChange === 'function' && this.props.onChange;
+      typeof this.props.onChange === 'function' && this.props.onChange(value);
     }
   }
 
