@@ -102,10 +102,10 @@ class App extends Component {
             variant={'bordered'}> 
           </Input>
           <Checkbox 
-              isChecked={checkbox.value}
-              onChange={(isChecked) => this.handleInputChange('checkbox',isChecked)}
-            />
-            <Input type="submit" />
+            isChecked={checkbox.value}
+            onChange={(isChecked) => this.handleInputChange('checkbox',isChecked)}
+          />
+          <Input type="submit" />
         </Form>
         <Button onClick={() => console.log("hi")} theme="primary" state={"enabled"}><span>click</span></Button>
         <Link href='https://github.com/GuntyGunty' theme="primary" variant="single">This is link</Link>

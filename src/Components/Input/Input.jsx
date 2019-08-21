@@ -51,17 +51,17 @@ class Input extends React.Component {
       THEMES.get(theme),
     );
 
-    // console.log(this.props.isValid);
-
     return (
       <label className="Input">
         {this.props.children}
-        <input type={type}
-               className={className} 
-               onChange={this.onChange} 
-               value={this.state.value} 
-               theme={theme}
-               placeholder={this.props.placeholder}/>
+        <input 
+          type={type}
+          className={className} 
+          onChange={this.onChange} 
+          value={this.state.value} 
+          theme={theme}
+          placeholder={this.props.placeholder}
+        />
       </label>
     ); 
   }
