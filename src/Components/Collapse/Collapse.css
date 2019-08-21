@@ -5,4 +5,12 @@
 
 .Collapse-container {
   width: 50%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease-in-out;
 }
+
+.Collapse-container.opened {
+  max-height: 380px;
+}
+
