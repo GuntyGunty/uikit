@@ -1,14 +1,63 @@
+.Input {
+  display: block;
+  margin-bottom: 20px;
+}
+
 .Input span {
   display: block;
   margin-bottom: 10px;
 }
 
 .Input-field {
-  padding: 5px 15px;
-  border: 1px solid #000;
   margin-right: 10px;
+  display: block;
+  border: 1px solid #bfbfbf;
+  border-radius: 2px;
+  color: #282828;
+  background-color: #fff;
+  padding: 0 10px 0 20px;
+  font-size: 14px;
+  line-height: 32px;
+  font-weight: 700;
 }
 
-.Input-field.bordered {
-  border: 1px solid #000;
+.Input.secondary .Input-field {
+  background-color: #f5f5f5;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 0;
+  padding:  0 14px;
+  color: #001a34;
+  height: 42px;
+}
+
+.Input.secondary .Input-field:hover,
+.Input-field:hover,
+.Input.secondary .Input-field:focus,
+.Input-field:focus {
+  border-color: #005bff;
+  outline: none;
+}
+
+.Input-descr {
+ font-size: 10px;
+ letter-spacing: .5px;
+ margin-bottom: 8px;
+ color: #999;
+ text-transform: uppercase;
+}
+
+.Input.primary .Input-field[type="submit"] {
+  background-color: #005bff;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  height: 35px;
+  display: block;
+  text-align: center;
+  border-radius: 3px; 
+  cursor: pointer;
+  outline: none;
+  padding: 0 30px;
 }

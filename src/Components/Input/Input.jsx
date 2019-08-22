@@ -3,6 +3,7 @@ import './Input.css'
 import { buildClassName } from '../../Utils/buildClassName';
 import { InputMasks } from './InputMasks'
 import { THEMES } from '../../Consts/Themes';
+import { VARIANTS } from '../../Consts/Variants';
 
 const TYPES = new Map([
   ['text', {}], 
@@ -43,24 +44,30 @@ class Input extends React.Component {
       isValid,
       type,
       theme,
+      variant,
+      value,
+      placeholder,
+      onChange,
+      inputDescr
     } = this.props;
 
     const className = buildClassName(
-      'Input-field',
+      'Input',
       isValid ? '' : 'invalid',
       THEMES.get(theme),
+      VARIANTS.get(variant),
     );
 
     return (
-      <label className="Input">
-        {this.props.children}
+      <label className={className}>
+        <span className="Input-descr">{inputDescr}</span>
         <input 
           type={type}
-          className={className} 
-          onChange={this.onChange} 
-          value={this.state.value} 
+          className="Input-field"
+          onChange={onChange} 
+          value={value} 
           theme={theme}
-          placeholder={this.props.placeholder}
+          placeholder={placeholder}
         />
       </label>
     ); 

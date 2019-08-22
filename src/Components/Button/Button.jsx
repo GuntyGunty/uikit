@@ -1,52 +1,52 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Button.css';
+import { THEMES } from '../../Consts/Themes';
+import { VARIANTS } from '../../Consts/Variants';
+// import { STATE } from '../../Consts/State';
+import { buildClassName } from '../../Utils/buildClassName';
 
-class Button extends Component {
- 
+const Button = ({
+  children,
+  className,
+  theme,
+  state,
+  variant,
+  onClick
+}) => {
+  const buildedClassName = buildClassName (
+    'Button',
+    className,
+    THEMES.get(theme),
+    VARIANTS.get(variant),
+  );
+
   onClick = (e) => {
     this.props.onClick();
   }
 
-  render() {
-    let className = 'Button';
-
-    let theme = {
-      primary: 'primary',
-      secondary: 'secondary',
-      accent: 'accent' 
-    }
-
-    let state = {
-      enabled: 'enabled',
-      pcossing: 'processing',
-      disabled: 'disabled'
-    }
-
-    let variants = {
-      filled: 'filled',
-      outlined: 'outlined'
-    }
-
-    let getClassName = (obj, props, className) => {
-      for(let key in obj) {
-        if(key === props) {
-          className +=  ' ' + obj[key];
-        }
-      }
-
-      return className
-    }
-
-    className = getClassName(theme, this.props.theme, className);
-    className =  getClassName(state, this.props.state, className);
-    className = getClassName(variants, this.props.variants, className);
-
-    return (
-      <button onClick={this.onClick} className={className} >
-        {this.props.children}
-      </button>
-    );
-  }
+  return (
+    <button className={buildedClassName}>{children}</button>
+  )
 }
 
 export default Button;
+
+
+// class Button extends Component {
+ 
+//   onClick = (e) => {
+//     this.props.onClick();
+//   }
+
+//   render() {
+
+
+//     return (
+//       <button onClick={this.onClick} className={className} >
+//         {this.props.children}
+//       </button>
+//     );
+//   }
+// }
+
+// export default Button;

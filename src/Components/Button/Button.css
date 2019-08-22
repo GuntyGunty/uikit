@@ -4,3 +4,17 @@
   padding: 5px 15px;
   border: 1px solid #000;
 }
+
+Button.filled {
+  background-color: #005bff;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  height: 45px;
+  display: block;
+  text-align: center;
+  border-radius: 3px; 
+  cursor: pointer;
+  outline: none;
+  padding: 0 30px;
+}
