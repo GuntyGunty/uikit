@@ -10,14 +10,14 @@ const Link = ({
   variant,
   children,
 }) => {
-  const _className = buildClassName(
+  const linkName = buildClassName(
     'Link',
     variant,
     THEMES.get(theme),
   );
 
   return (
-    <a href={href} onClick={onClick} className={_className}>
+    <a href={href} onClick={onClick} className={linkName}>
       {children}
     </a>
   )
@@ -26,43 +26,3 @@ const Link = ({
 export default Link;
 
 
-
-
-// export default class Link extends React.Component {
-
-//   constructor(props) {
-//     super(props);
-
-//     this.state = {
-//       isClicked: false,
-//     };
-//   }
-
-//   onClick = (e) => {
-//     this.setState({
-//       isClicked: !this.state.isOpened,
-//     });
-//   }
-
-//   render() {
-//     const {
-//       href, 
-//       onClick,
-//       theme,
-//       variant,
-//       children,
-//     } = this.props;
-
-//     const className = buildClassName(
-//       'Link',
-//       variant,
-//       THEMES.get(theme),
-//     );
-
-//     return (
-//       <a href={href} onClick={onClick} className={className}>
-//         {children}
-//       </a>
-//     );
-//   }
-// }

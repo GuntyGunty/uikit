@@ -30,23 +30,3 @@ const Button = ({
 }
 
 export default Button;
-
-
-// class Button extends Component {
- 
-//   onClick = (e) => {
-//     this.props.onClick();
-//   }
-
-//   render() {
-
-
-//     return (
-//       <button onClick={this.onClick} className={className} >
-//         {this.props.children}
-//       </button>
-//     );
-//   }
-// }
-
-// export default Button;

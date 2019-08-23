@@ -33,8 +33,24 @@
   background-color: #ccdeff;
 }
 
-#ccdeff
-
 .Checkbox-label::after {
   content: "";
+  display: none;
+  position: absolute;
+  left: 3px;
+  top: -2px;
+  width: 16px;
+  height: 16px;
+  background-image: url('../../img/ceckbox-check.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.Checkbox-input:checked + .Checkbox-label::after {
+  display: block;
+}
+
+.Checkbox-input:checked + .Checkbox-label {
+  font-weight: 700;
 }

@@ -7,22 +7,21 @@ export default class Collapse extends React.Component {
 
     this.state = {
       isOpened: false,
-      // children: null,
-      collapseContainerName: 'Collapse-container',
+      collapseContainerName: 'Collapse',
     }
   }
 
   onClick = (e) => {
     this.setState({isOpened: !this.state.isOpened, 
-      collapseContainerName: (this.state.isOpened) ? 'Collapse-container' : 'Collapse-container opened'
+      collapseContainerName: (this.state.isOpened) ? 'Collapse' : 'Collapse opened'
     });
   }
 
   render() {
     return (
-      <div className="Collapse">
+      <div className={this.state.collapseContainerName}>
         <span className="Collapse-toggler" onClick={this.onClick}>Show more</span>
-        <div className={this.state.collapseContainerName}>
+        <div className="Collapse-container">
           {this.props.children}
         </div>
       </div>
