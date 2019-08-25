@@ -16,7 +16,6 @@ const Checkbox = ({
     isChecked ? 'checked' : ''
   );
 
-
 return (
     <label className={checkboxName} {...rest}>
       <input 

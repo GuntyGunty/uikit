@@ -3,6 +3,7 @@ import './Input.css'
 import { buildClassName } from '../../Utils/buildClassName';
 import { InputMasks } from './InputMasks'
 import { THEMES } from '../../Consts/Themes';
+import { VARIANTS } from '../../Consts/Variants';
 
 const TYPES = new Map([
   ['text', {}], 
@@ -34,38 +35,41 @@ class Input extends React.Component {
 
     if(value.match(inputType.validator)) {
       this.setState({ value });
-      typeof this.props.onChange === 'function' && this.props.onChange;
+      typeof this.props.onChange === 'function' && this.props.onChange(value);
     }
   }
 
   render() {
     const {
-      name, 
       isValid,
       type,
       theme,
       variant,
-      onBlur,
+      value,
+      placeholder,
+      onChange,
+      inputDescr
     } = this.props;
 
     const className = buildClassName(
-      'Input-field',
-      this.props.isValid ? '' : 'invalid',
+      'Input',
+      isValid ? '' : 'invalid',
       THEMES.get(theme),
+      VARIANTS.get(variant),
     );
 
-    // console.log(this.props.isValid);
-
     return (
-      <label className="Input">
-        {this.props.children}
-        <input type={type}
-               className={className} 
-               onChange={this.onChange} 
-               value={this.state.value} 
-               theme={this.state.theme}
-               placeholder={this.props.placeholder}/>
-      </label>
+      <label className={className}>
+        <span className="Input-descr">{inputDescr}</span>
+        <input 
+          type={type}
+          className="Input-field"
+          onChange={onChange} 
+          value={value} 
+          theme={theme}
+          placeholder={placeholder}
+        />
+
     ); 
   }
 }

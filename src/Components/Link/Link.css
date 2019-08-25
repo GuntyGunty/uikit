@@ -1,4 +1,21 @@
 .Link {
-  text-align: left;
-  margin-bottom: 1em;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: normal;
+  font-size: inherit;
+  color: #005bff;
+  transition: all .08s ease-in-out;
+}
+
+.Link:hover {
+  color: #004ed6;
+}
+
+.Link.through {
+  display: inline-block;
+}
+
+.Link.single{
+  display: block;
+  margin-bottom: 5px;
 }

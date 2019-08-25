@@ -1,3 +1,56 @@
 .Checkbox {
   margin-right: 10px;
 }
+
+.Checkbox-input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.Checkbox-label {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  position: relative;
+}
+
+.Checkbox-label::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #005bff;
+  border-radius: 2px;
+  margin-top: -2px;
+  background-color: #fff;
+}
+
+.Checkbox-label:hover::before {
+  background-color: #ccdeff;
+}
+
+.Checkbox-label::after {
+  content: "";
+  display: none;
+  position: absolute;
+  left: 3px;
+  top: -2px;
+  width: 16px;
+  height: 16px;
+  background-image: url('../../img/ceckbox-check.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.Checkbox-input:checked + .Checkbox-label::after {
+  display: block;
+}
+
+.Checkbox-input:checked + .Checkbox-label {
+  font-weight: 700;
+}

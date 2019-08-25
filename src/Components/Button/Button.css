@@ -3,4 +3,24 @@
   margin-bottom: 20px;
   padding: 5px 15px;
   border: 1px solid #000;
+  transition: all .08s ease-in-out;
 }
+
+Button.filled {
+  background-color: #005bff;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  height: 35px;
+  display: block;
+  text-align: center;
+  border-radius: 3px; 
+  cursor: pointer;
+  outline: none;
+  padding: 0 30px;
+}
+
+Button.filled:hover {
+  background-color: #004ed6;
+}
+
