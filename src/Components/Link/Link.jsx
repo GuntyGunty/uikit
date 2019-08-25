@@ -1,9 +1,9 @@
 import React from 'react';
 import './Link.css';
+import { THEMES } from '../../Consts/Themes';
+import { buildClassName } from '../../Utils/buildClassName';
 
 export default class Link extends React.Component {
-
-//нужен ли ссылке state is clicked?
 
   constructor(props) {
     super(props);
@@ -20,36 +20,23 @@ export default class Link extends React.Component {
   }
 
   render() {
-    let className = 'Link';
+    const {
+      href, 
+      onClick,
+      theme,
+      variant,
+    } = this.props;
 
-    let theme = {
-      ondark: 'ondark',
-      onlight: 'onlight'
-    }
-
-    let variants = {
-      through: 'throught',
-      single: 'single'
-    }
-
-    let getClassName = (obj, props, className) => {
-      for(let key in obj) {
-        if(key === props) {
-          className += ' ' + obj[key];
-        }
-      }
-      return className;
-    }
-
-    className = getClassName(theme, this.props.theme, className);
-    className = getClassName(variants, this.props.variants, className);
+    const className = buildClassName(
+      'Link',
+      variant,
+      THEMES.get(theme),
+    );
 
     return (
-      <div className={className} onClick={this.onClick}>
-        <a href={this.props.href}>
-          {this.props.children}
-        </a>
-      </div>
+      <a href={this.props.href} onClick={this.onClick} className={className}>
+        {this.props.children}
+      </a>
     );
   }
 }
