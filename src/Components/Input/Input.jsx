@@ -69,7 +69,7 @@ class Input extends React.Component {
           theme={theme}
           placeholder={placeholder}
         />
-      </label>
+
     ); 
   }
 }

@@ -4,13 +4,11 @@ import './App.css';
 import Input from './Components/Input/Input';
 import Checkbox from './Components/Checkbox/Checkbox';
 import Form from './Components/Form/Form'
-
-// import { InputMasks } from './Components/Input//InputMasks'
+import { InputMasks } from './Components/Input/InputMasks'
 
 import Collapse from './Components/Collapse/Collapse'
 import Link from './Components/Link/Link'
 import Button from './Components/Button/Button'
-
 
 const emailMask = /^(\w)*@(\w)+.\w{2,}$/g;
 const phoneMask = /^\+?\d{0,11}$/g;
@@ -90,22 +88,24 @@ class App extends Component {
             onChange={(value) => this.handleInputChange('phone', value)}
             onBlur={() => console.log(this.state)}
             inputDescr="Some description"
-            > 
-          </Input>
+            /> 
           <Input
             type="email"
             name="email"
             isValid={email.isValild}
             theme="secondary"
             placeholder="email@mail.ru"
-          > 
-          </Input>
+          /> 
           <Checkbox 
             isChecked={checkbox.value}
             onChange={(isChecked) => this.handleInputChange('checkbox', isChecked)}
             label="Check it!"
           />
-          <Input className="Button"  type="submit" value="Submit" />
+          <Input 
+            className="Button"  
+            type="submit" 
+            value="Submit" 
+          />
         </Form>
         <Button onClick={() => console.log("hi")} theme="primary" state="enabled" variant="filled"><span>click</span></Button>
         <Link href='https://github.com/GuntyGunty' theme="primary" className="test" variant="through">This is link</Link>
